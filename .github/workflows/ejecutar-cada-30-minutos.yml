@@ -1,0 +1,34 @@
+name: Enviar temperatura por WhatsApp
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ejecutar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Instalar Kapso
+        run: npm install -g @kapso/cli
+
+      - name: Instalar librerías Python
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar script
+        env:
+          KAPSO_API_KEY: ${{ secrets.KAPSO_API_KEY }}
+          KAPSO_TO: ${{ secrets.KAPSO_TO }}
+          KAPSO_PHONE_NUMBER_ID: ${{ secrets.KAPSO_PHONE_NUMBER_ID }}
+        run: python tempe.py
