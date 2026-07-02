@@ -31,4 +31,4 @@ jobs:
           KAPSO_API_KEY: ${{ secrets.KAPSO_API_KEY }}
           KAPSO_TO: ${{ secrets.KAPSO_TO }}
           KAPSO_PHONE_NUMBER_ID: ${{ secrets.KAPSO_PHONE_NUMBER_ID }}
-        run: python tempe.py
+        run: python Tempe.py
