@@ -46,7 +46,7 @@ def send_whatsapp_text(to: str, phone_number_id: str, text: str):
     if not KAPSO_API_KEY:
         raise RuntimeError("Falta la variable de entorno KAPSO_API_KEY en Render.")
 
-    url = f"https://api.kapso.ai/meta/whatsapp/{phone_number_id}/messages"
+    url = f"https://api.kapso.ai/meta/whatsapp/v24.0/{phone_number_id}/messages"
 
     payload = {
         "messaging_product": "whatsapp",
