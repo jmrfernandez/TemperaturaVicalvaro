@@ -1,8 +1,6 @@
 name: Enviar temperatura por WhatsApp
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
