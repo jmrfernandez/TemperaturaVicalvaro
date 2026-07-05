@@ -122,7 +122,7 @@ def webhook():
             temperatura = get_weather_number()
 
             respuesta = (
-                f"Temperatura actual en Vicálvaro: {temperatura}°C"
+                f"Temp Vicálvaro: {temperatura}°C"
             )
 
             send_whatsapp_text(
